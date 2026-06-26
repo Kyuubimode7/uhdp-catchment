@@ -1,16 +1,35 @@
 {
-  "name": "uhdp-catchment",
+  "name": "@uhdp/catchment",
   "version": "0.1.0",
   "description": "catchment calculation functions used in uhdp",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "vitest run"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "devDependencies": {
-    "typescript": "^6.0.3"
+    "@types/rbush": "^4.0.0",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.9"
+  },
+  "dependencies": {
+    "@turf/turf": "^7.3.5",
+    "ngraph.graph": "^20.1.2",
+    "ngraph.path": "^1.6.1",
+    "rbush": "^4.0.1"
   }
 }
